@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fondo">
+      <h1 id="texto">Modo Claro</h1>
+      <button id="boton">Cambiar a modo oscuro</button>
+    </div>
+    <script>
+      let texto = document.getElementById("texto");
+      let boton = document.getElementById("boton");
+      let fondo = document.getElementById("fondo");
+
+      let modoOscuro = false;
+
+      boton.addEventListener("click", () => {
+        if (modoOscuro) {
+          texto.textContent = "Modo Claro";
+          fondo.style.backgroundColor = "white";
+          fondo.style.color = "black";
+          boton.textContent = "Cambiar a modo oscuro";
+          modoOscuro = false;
+        } else if (!modoOscuro) {
+          texto.textContent = "Modo Oscuro";
+          fondo.style.backgroundColor = "black";
+          fondo.style.color = "white";
+          boton.textContent = "Cambiar a modo claro";
+          modoOscuro = true;
+        }
+      });
+    </script>
+  </body>
+</html>

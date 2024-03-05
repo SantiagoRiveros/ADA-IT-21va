@@ -1,0 +1,41 @@
+<!-- // Solicitar al usuario que ingrese su nombre
+let nombreUsuario = prompt("Por favor, ingresa tu nombre:", "Usuario");
+
+// Verificar si el usuario hizo clic en "Aceptar"
+if (nombreUsuario !== null && nombreUsuario !== "") {
+    // Mostrar un saludo si se ingresó un nombre
+    alert("Hola, " + nombreUsuario + "!");
+} else {
+    // Mostrar un mensaje si se hizo clic en "Cancelar" o no se ingresó un nombre
+    alert("No ingresaste un nombre válido.");
+} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button">Ingresar Usuario</button>
+    <script>
+      let boton = document.getElementById("button");
+
+      boton.addEventListener("click", () => {
+        let nombreUsuario = prompt(
+          "Por favor, ingresa tu nombre:",
+          "DEJA DE PONER MILANESA"
+        );
+
+        // Verificar si el usuario hizo clic en "Aceptar"
+        if (nombreUsuario !== null && nombreUsuario !== "") {
+          // Mostrar un saludo si se ingresó un nombre
+          alert("Hola, " + nombreUsuario + "!");
+        } else {
+          // Mostrar un mensaje si se hizo clic en "Cancelar" o no se ingresó un nombre
+          alert("No ingresaste un nombre válido.");
+        }
+      });
+    </script>
+  </body>
+</html>

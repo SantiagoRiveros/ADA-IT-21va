@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function cambiarColor() {
+        let fondoBody = prompt("Ingrese un color:", "CAMBIA ESTE COLOR");
+        if (
+          fondoBody !== null &&
+          fondoBody !== "" &&
+          fondoBody !== undefined &&
+          fondoBody !== "CAMBIA ESTE COLOR"
+        ) {
+          document.body.style.backgroundColor = fondoBody;
+        } else {
+          console.log(fondoBody);
+          alert("CHE VO PONE UN COLOR EH");
+        }
+      }
+      cambiarColor();
+    </script>
+  </body>
+</html>

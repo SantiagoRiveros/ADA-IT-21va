@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hola-mundo">Hola Mundo</h1>
+    <button id="click-aca">CLICK ACA</button>
+    <script>
+      let holaMundo = document.getElementById("hola-mundo");
+      let boton = document.getElementById("click-aca");
+
+      /* console.log(holaMundo.textContent)
+        holaMundo.textContent = "MILANESA RULES" */
+      boton.addEventListener("click", () => {
+        holaMundo.textContent =
+          "Fua amigo no da que toques ese boton, cualquiera";
+        boton.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
