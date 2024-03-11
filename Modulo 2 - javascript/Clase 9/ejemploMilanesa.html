@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Lista</h1>
+    <button id="botonAgregar">Agregar Tarea</button>
+    <button id="botonEliminar">Eliminar ultima tarea</button>
+    <ul id="lista"></ul>
+    <script>
+      const lista = document.getElementById("lista");
+      const botonAgregar = document.getElementById("botonAgregar");
+      const botonEliminar = document.getElementById("botonEliminar");
+      let contador = 0;
+
+      botonAgregar.addEventListener("click", () => {
+        contador++;
+        let nuevaTarea = document.createElement("li");
+        nuevaTarea.textContent = `Tarea Numero ${contador}`;
+        nuevaTarea.id = `tarea-${contador}`;
+
+        lista.appendChild(nuevaTarea);
+      });
+
+      botonEliminar.addEventListener("click", () => {
+        if (contador === 0) {
+          alert("Que queres eliminar?");
+        } else {
+          let tareaAEliminar = document.getElementById(`tarea-${contador}`);
+          lista.removeChild(tareaAEliminar);
+          contador--;
+        }
+      });
+    </script>
+  </body>
+</html>
