@@ -80,6 +80,11 @@ Se utiliza para detener la propagacion de un evento, evitando que se propague, a
 para evitar que otros manejadores de eventos se disparen.
 
 
+TEMPLATES DE HTML
+Los templates de HTML son elementos <template> que contienen contenido HTML que no se renderiza automáticamente en la página.
+ Pueden ser clonados y agregados dinámicamente al DOM cuando sea necesario,
+ lo que los hace útiles para la creación de elementos repetitivos o complejos.
+
 
 
 */

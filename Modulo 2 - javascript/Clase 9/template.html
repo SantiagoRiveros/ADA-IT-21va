@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Templates de HTML</title>
+  </head>
+  <body>
+    <template id="miTemplate">
+      <div>
+        <h2>Nombre: <span class="nombre"></span></h2>
+        <p>Edad: <span class="edad"></span></p>
+        <p>Correo electrónico: <span class="email"></span></p>
+      </div>
+    </template>
+
+    <div id="contenedor"></div>
+
+    <script>
+      const template = document.getElementById("miTemplate");
+
+      const nuevoElemento = document.importNode(template.content, true);
+
+      nuevoElemento.querySelector(".nombre").textContent = "Juan";
+      nuevoElemento.querySelector(".edad").textContent = "30";
+      nuevoElemento.querySelector(".email").textContent = "juan@example.com";
+
+      document.getElementById("contenedor").appendChild(nuevoElemento);
+    </script>
+  </body>
+</html>
+
+<!-- 
+    var miTemplate = document.createElement('template');
+miTemplate.innerHTML = '<p>Contenido del template</p>';
+
+// Clonar el template y agregarlo al cuerpo del documento
+document.body.appendChild(miTemplate.content.cloneNode(true));
+
+
+ -->
