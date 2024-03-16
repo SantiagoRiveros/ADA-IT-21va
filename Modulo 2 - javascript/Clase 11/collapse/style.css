@@ -1,0 +1,7 @@
+.collapse-div {
+  display: none;
+}
+
+.collapse-button:hover {
+  color: red;
+}
