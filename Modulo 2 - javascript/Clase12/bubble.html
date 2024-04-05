@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div">
+      <section>
+        <h2>sadada</h2>
+        <button id="button">Click</button>
+      </section>
+    </div>
+    <script>
+      const div = document.getElementById("div");
+      const button = document.getElementById("button");
+
+      div.addEventListener("click", function () {
+        document.body.style.color = "green";
+        console.log("Hey, its a div");
+      });
+
+      button.addEventListener("click", function (event) {
+        //event.stopPropagation();
+        document.body.style.backgroundColor = "black";
+        console.log("Hey its a button");
+      });
+    </script>
+  </body>
+</html>
