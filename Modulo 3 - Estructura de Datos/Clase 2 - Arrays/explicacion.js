@@ -108,3 +108,100 @@ console.log(array3);
 //El metodo join une los elementos de un array, en un string, y lo que le pasamos como argumento, es lo que va a "separarlos" en el string
 let array4 = array3.join(" - ");
 console.log(array4);
+
+/* Pero ahora... para que #!@ nos sirven los arrays
+
+1- Almacenar datos de manera ordenada, y luego poder acceder a ellos
+Ej: App de rutina de ejercicios, flexiones, lagartijas, levantamiento de pesas
+["flexiones", "lagartijas", "levantamiento de pesas"]
+2- Iteracion y procesamiento de elementos, podemos recorrer nuestro array e ir haciendole cambios a cada uno de los elementos
+De manera facil y sencilla
+3- Implementacion de colas y filas, los arrays son la mejor manera de aproximarse a construir una fila o lista en nuestro codigo
+4- Almacenar datos de manera estructurada
+5- Operaciones de busqueda y filtrado
+Ej: ["Ruta 2", "Ruta 11", "Ruta 37", "Ruta 9"]
+6- Generar algoritmos de ordenamiento
+[4, 1, 9, 3, 2]
+7- Representacion de datos de manera grafica
+Ej: Una app de finanzas y yo voy guardando los gastos e ingresos de la cuenta una vez al dia
+[dia1, dia2, dia3, dia4]
+
+
+
+Casos de uso medianamente comunes:
+
+1- Almacenamiento de datos de usuario:
+   let usuarios = [
+       { nombre: 'Juan', edad: 25, correo: 'juan@example.com' },
+       { nombre: 'María', edad: 30, correo: 'maria@example.com' },
+       { nombre: 'Carlos', edad: 28, correo: 'carlos@example.com' }
+   ];
+
+2- Listado de tareas de una app de gestion:
+
+let tareas = ['Completar informe', 'Enviar correo electrónico', 'Preparar presentación'];
+
+3- Gestion de carrito de compras:
+
+      let carrito = [
+       { nombre: 'Camiseta', precio: 20, cantidad: 2 },
+       { nombre: 'Pantalones', precio: 30, cantidad: 1 },
+       { nombre: 'Zapatos', precio: 50, cantidad: 1 }
+   ];
+
+4- Almacenar resultados de encuestas:
+   let resultadosEncuesta = [
+       { pregunta: '¿Te gusta nuestro producto?', respuesta: 'Sí' },
+       { pregunta: '¿Cuál es tu rango de edad?', respuesta: '25-35' },
+       { pregunta: '¿Qué función te gustaría ver añadida?', respuesta: 'Chat en vivo' }
+   ];
+   
+
+5- representacion grafica de datos:
+
+   let datos = [
+       { x: 1, y: 10 },
+       { x: 2, y: 20 },
+       { x: 3, y: 30 },
+       { x: 4, y: 25 },
+       { x: 5, y: 35 }
+   ];
+
+*/
+
+//Caracteristicas principales de un array:
+
+/* 
+1- Coleccion ordenada, es decir tiene un orden especifico y esto permite que se pueda acceder por su posicion o indice
+2- Indices: cada elemento tiene un indice especifico asociado, que se puede usar para accederlo
+los indices COMIENZAN DESDE CERO para el primer elemento, y se van incrementando
+3- Tamaño dinamico: en JS los arrays pueden aumentar o reducir su tamaño dinamicamente segun sea necesario, esto significa que se puede agregar
+o eliminar indices al gusto del usuario.
+4- Flexibilidad de los tipos de datos: Los arrays pueden contener elementos de diferentes tipos de datos, no estan limitados a un tipo de adto especifico.
+
+*/
+
+//Propiedad length <- memotecnico de esto GALLINA TIENE HUEVOS (por el gth del final)
+//la propiedad length devuelve la cantidad de indices de un array
+
+let arrayMilanesa = [0, 1, 2, 3, 4, 5];
+console.log(arrayMilanesa[arrayMilanesa.length - 1]);
+console.log(arrayMilanesa.length);
+
+//bucles for in y for of
+
+//for in
+let arrayLetras = ["a", "b", "c", "d", "e", "f", "g"];
+
+for (let indiceLetra in arrayLetras) {
+  //en el for in el pointer es el numero de indice que recorre
+  console.log(arrayLetras[indiceLetra]);
+}
+
+//for of
+
+for (let letra of arrayLetras) {
+  //en el for of el pointer es el valor de cada uno de los indices
+  console.log("for of");
+  console.log(letra);
+}
