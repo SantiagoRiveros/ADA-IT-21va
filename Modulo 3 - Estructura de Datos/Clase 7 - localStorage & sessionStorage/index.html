@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hola Mundo</h1>
+    <button id="boton">Get Milanesa</button>
+    <script>
+      function saveOnLocalStorage(key, value) {
+        localStorage.setItem(key, value);
+        return null;
+      }
+
+      saveOnLocalStorage("milanesa", "rica");
+
+      const boton = document.getElementById("boton");
+
+      boton.addEventListener("click", () => {
+        let local = localStorage.getItem("milanesa");
+        console.log(local);
+        return null;
+      });
+    </script>
+  </body>
+</html>

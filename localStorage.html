@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hola Mundo</h1>
+    <br />
+    <input placeholder="Key" id="addKey" /> <br />
+    <input placeholder="Value" id="addValue" /> <br />
+    <button id="add">Add to localStorage</button> <br />
+    <input placeholder="Key" id="getKey" /> <br />
+    <button id="get">Get from localStorage</button> <br />
+    <input placeholder="Key" id="deleteKey" /> <br />
+    <button id="delete">Remove from localStorage</button>
+
+    <script>
+      const addButton = document.getElementById("add");
+      const getButton = document.getElementById("get");
+      const deleteButton = document.getElementById("delete");
+
+      addButton.addEventListener("click", () => {
+        const key = document.getElementById("addKey").value;
+        const value = document.getElementById("addValue").value;
+
+        localStorage.setItem(key, value);
+        sessionStorage.setItem(key, value);
+      });
+
+      getButton.addEventListener("click", () => {
+        const key = document.getElementById("getKey").value;
+        console.log(localStorage.getItem(key));
+      });
+
+      deleteButton.addEventListener("click", () => {
+        const key = document.getElementById("deleteKey").value;
+
+        localStorage.removeItem(key);
+      });
+
+      /*  boton.addEventListener("click", () => {
+        let local = localStorage.getItem("milanesa");
+        console.log(local);
+        return null;
+      });
+
+
+      eliminar.addEventListener("click", () => {
+        localStorage.removeItem("milanesa");
+      });
+
+      add.addEventListener("click", () => {
+        localStorage.setItem("milanesa", "rica");
+      }); */
+    </script>
+  </body>
+</html>
