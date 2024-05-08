@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  align-items: center;
+  gap: 5px;
+}
+select {
+  width: 175px;
+}
+input {
+  width: 175px;
+}

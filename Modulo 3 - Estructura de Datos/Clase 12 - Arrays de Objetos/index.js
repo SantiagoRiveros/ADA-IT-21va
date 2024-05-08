@@ -33,3 +33,4 @@ const nombresMayusculas = personas
     .filter(persona => persona.edad > 25)
 
 console.log(nombresMayusculas)
+
