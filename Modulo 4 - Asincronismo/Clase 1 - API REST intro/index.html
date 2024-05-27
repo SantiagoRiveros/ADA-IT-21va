@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon App</title>
+</head>
+<body>
+    <h1>Pokemon App</h1>
+    <ul id="pokemons"></ul>
+    <script>
+        /* Capturo el ul con id pokemons */
+        const pokemonsContainer = document.getElementById('pokemons');
+
+        /* Creo una funcion para mostrar los pokemones en pantalla, cada uno con un botton que al hacerle click, me abre otra pestaña con la url que le paso como parametro */
+        function loadPokemons(pokemons){
+            /* Itero en el array de pokemones */
+            pokemons.forEach(pokemon => {
+                /* Creo un li y un button por cada pokemon */
+                const newPokemon = document.createElement('li')
+                const pokemonButton = document.createElement('button')
+                /* le pongo como texto interno el nombre del pokemon */
+                pokemonButton.innerText = pokemon.name
+                /* le agrego un event listener, que al hacerle click al boton, me abra en otra pestaña la url del pokemon */
+                pokemonButton.addEventListener('click', function(){
+                    /* metodo para abrir pestaña nueva, el primer parametro es la url de la pestaña, el segundo es opcional */
+                    window.open(pokemon.url, "_blank")
+                })
+                /* le agrego a cada li el boton del pokemon */
+                newPokemon.appendChild(pokemonButton)
+                /* le agrego al contenedor cada li con su respectivo button */
+                pokemonsContainer.appendChild(newPokemon)
+            })
+        }
+
+        /* function para consumir la api, y mostrar los pokemones */
+        /* Esta es la forma de hacerlo con la sintaxis de .then y .catch */
+       /*  function getPokemons(){
+            // consumo la api 
+            fetch('https://pokeapi.co/api/v2/pokemon?limit=1302')
+            // Si la respuesta es correcta, la convierto a json 
+            .then(response => response.json())
+            // Si sale todo bien, cargo los pokemones 
+            .then(data => loadPokemons(data.results))
+            // Si hay un error, el catch es el encargado de "manejarlo"
+            .catch(error => console.error(error))
+        } */
+
+        /* Esta es la forma mas moderna de hacer la misma peticion, igualmente ambas son validas, es a gusto y comodidad */
+        async function getPokemons(){
+            try{
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1302')
+                const parsedPokemons = await response.json()
+                loadPokemons(parsedPokemons.results)
+            }
+            catch(error){
+                console.error(error)
+            }
+        }
+
+        /* llamo a la funcion para cargar pokemones */
+        getPokemons()
+    </script>
+</body>
+</html>
