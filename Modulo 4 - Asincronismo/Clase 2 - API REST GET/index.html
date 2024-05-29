@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Rick & Morty Characters</title>
+</head>
+<body>
+    <h1>Rick & Morty Characters</h1>
+    <ul id="characters"></ul>
+    <script>
+        const charactersList = document.getElementById("characters")
+
+        function apiCall(){
+            fetch("https://rickandmortyapi.com/api/character")
+            .then(response => response.json())
+            .then(data => renderCharacters(data.results))
+            .catch(error => console.error(error))
+        }
+
+        apiCall()
+
+        function renderCharacters(characters){
+            characters.forEach(character => {
+                const newCharacter = document.createElement("li")
+                const characterAvatar = document.createElement("img")
+                const characterName = document.createElement("h3")
+                const characterStatus = document.createElement("h5")
+
+                characterAvatar.src = character.image
+                characterName.textContent = character.name
+                characterStatus.textContent = character.status
+
+                characterStatus.style.color = character.status === "Alive" ? "green" : character.status === "Dead" ? "red" : "black"
+
+                newCharacter.appendChild(characterAvatar)
+                newCharacter.appendChild(characterName)
+                newCharacter.appendChild(characterStatus)
+
+                charactersList.appendChild(newCharacter)
+
+            })
+        }
+
+    </script>
+</body>
+</html>
