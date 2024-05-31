@@ -35,3 +35,4 @@ const nombrePersonaje = "Punisher"
 /* Para personajes */
 
 `https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=name&nameStartsWith=${nombrePersonaje}`
+
