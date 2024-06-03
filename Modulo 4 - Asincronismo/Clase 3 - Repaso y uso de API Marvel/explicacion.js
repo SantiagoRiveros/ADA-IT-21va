@@ -36,3 +36,6 @@ const nombrePersonaje = "Punisher"
 
 `https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=name&nameStartsWith=${nombrePersonaje}`
 
+"https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb526277671dde&hash=f642c2d8a8b133cddae6df5ae29eed55&offset=0&orderBy=title&titleStartsWith=avengers"
+
+// ts, apikey, hash, offset, orderBy, titleStartsWith
