@@ -1,0 +1,14 @@
+Ejercicio 1: Crear un nuevo recurso
+
+Crear un formulario HTML para añadir un nuevo producto (nombre, precio).
+Utilizar el método POST para enviar los datos del formulario a un servidor simulado (puede ser https://jsonplaceholder.typicode.com/posts).
+
+Ejercicio 2: Actualizar un recurso existente
+
+Crear un formulario HTML para actualizar un producto existente (nombre, precio).
+Utilizar el método PUT para enviar los datos actualizados a un servidor simulado.
+
+Ejercicio 3: Eliminar un recurso
+
+Crear un botón en HTML para eliminar un producto.
+Utilizar el método DELETE para enviar la solicitud de eliminación a un servidor simulado.
