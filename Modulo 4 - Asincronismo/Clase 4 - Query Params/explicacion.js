@@ -102,3 +102,12 @@ const offset2 = (parseInt(limit) * parseInt(page)) - parseInt(limit);
 
 
 
+function cargarCategorias(categorias){
+    categorias.forEach((categoria) => {
+      let nuevaCategoria = document.createElement("option");
+      nuevaCategoria.value = categoria;
+      nuevaCategoria.textContent = categoria;
+      categoria_filtro.appendChild(nuevaCategoria)
+  
+    })
+  };
