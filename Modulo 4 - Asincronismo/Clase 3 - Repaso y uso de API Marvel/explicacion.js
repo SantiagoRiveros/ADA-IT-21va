@@ -17,25 +17,38 @@ https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb5
 
 */
 
-"https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb526277671dde&hash=f642c2d8a8b133cddae6df5ae29eed55&offset=0&orderBy=title&titleStartsWith=avengers"
+"https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb526277671dde&hash=f642c2d8a8b133cddae6df5ae29eed55&offset=0&orderBy=title&titleStartsWith=avengers";
 
 /* REEMPLAZANDO LSO DATOS QUE VAN A TENER QUE CAMBIAR USTEDES */
 
 /* Vamos a usar el mismo ejemplo de arriba, privateKey es abcd, nuestra publicKey es 1234 y nuestro timestamp es 1000 */
 
-const publicKey = "1234"
-const privateKey = "abcd"
-const ts = "1000"
-const hash = "f642c2d8a8b133cddae6df5ae29eed55"
-const nombreComic= "Avengers"
-const nombrePersonaje = "Punisher"
+const publicKey = "1234";
+const privateKey = "abcd";
+const ts = "1000";
+const hash = "f642c2d8a8b133cddae6df5ae29eed55";
+const nombreComic = "Avengers";
+const nombrePersonaje = "Punisher"`https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=title&titleStartsWith=${nombreComic}`/* Para personajes */
 
-`https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=title&titleStartsWith=${nombreComic}`
+`https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=name&nameStartsWith=${nombrePersonaje}`;
 
-/* Para personajes */
-
-`https://gateway.marvel.com/v1/public/characters?ts=1000&apikey=${publicKey}&hash=${hash}&offset=0&orderBy=name&nameStartsWith=${nombrePersonaje}`
-
-"https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb526277671dde&hash=f642c2d8a8b133cddae6df5ae29eed55&offset=0&orderBy=title&titleStartsWith=avengers"
+("https://gateway.marvel.com/v1/public/comics?ts=1000&apikey=1b4af2e9e351b6367dbb526277671dde&hash=f642c2d8a8b133cddae6df5ae29eed55&offset=0&orderBy=title&titleStartsWith=avengers");
 
 // ts, apikey, hash, offset, orderBy, titleStartsWith
+
+let url = `http://gateway.marvel.com/v1/public/comics?ts=1&apikey=20ef376510097f50f89a7cf2b98cc1ce&hash=3c0bdb616f415c7a9a47908b7f5d4814&offset=0&orderBy=${
+  order.value === "az" || order.value === "new"
+    ? ""
+    : order.value === "za" || order.value === "old"
+    ? "-"
+    : ""
+}${
+  order.value === "new" || order.value === "old"
+    ? "modified"
+    : tipoComicCharacter.value === "comic"
+    ? "title"
+    : "name"
+}&${tipoComicCharacter.value === "comic" ? "title" : "name"}StartsWith=${
+  buscarInput.value
+}`;
+getApiMarvel(url);
