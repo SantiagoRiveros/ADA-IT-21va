@@ -1,0 +1,4 @@
+Una promesa en Javascript es un objeto que representa, la eventual finalizacion (o falla)
+de una operacion asincronica y su valor resultante. Es una forma de trabajar con operaciones
+asincronicas, como una peticion a un servidor(o api) o temporizadores, de manera mas legible y manejable
+
